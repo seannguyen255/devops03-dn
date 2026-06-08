@@ -12,9 +12,9 @@ services:
       - 8800:8800
     build: ./API
     networks:
-      - demo_network
+      - my_network
 
 
 networks:
-  demo_network:
+  my_network:
     external: true
