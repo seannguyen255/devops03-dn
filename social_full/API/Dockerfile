@@ -1,6 +1,6 @@
 FROM node:24
 
-WORKDIR /node_backend
+WORKDIR /backend_node
 
 COPY package.json .
 
@@ -8,10 +8,8 @@ RUN yarn config set network-timeout 3000000
 
 RUN yarn install
 
-COPY . . 
-
-RUN yarn run build
+COPY . .
 
 EXPOSE 8800
 
-CMD ["node","index.js"]
+CMD [ "node","index.js" ]
