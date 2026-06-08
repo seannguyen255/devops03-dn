@@ -1,17 +1,3 @@
-FROM node:24
+FROM nginx
 
-WORKDIR /node_frontend
-
-COPY package.json .
-
-RUN yarn config set network-timeout 3000000
-
-RUN yarn install
-
-COPY . . 
-
-RUN yarn run build
-
-EXPOSE 5137
-
-CMD ["node","index.js"]
+COPY ./dist /usr/share/nginx/html
