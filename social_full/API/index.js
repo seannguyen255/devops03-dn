@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173","http://159.223.88.241:5173","https://react.snlab.info"],
 }));
 
 app.use(express.json());
