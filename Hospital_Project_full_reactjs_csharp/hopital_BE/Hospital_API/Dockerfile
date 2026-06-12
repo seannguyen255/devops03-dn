@@ -1,17 +1,17 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0 as build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
 WORKDIR /build
 
 COPY  . .
 
-RUN dotnet publish -o ./publish
+RUN dotnet publish -o ./publish_product
 
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS deploy
 
-WORKDIR /app
+WORKDIR /backend_dotnet
 
-COPY --from=build /build/publish .
+COPY --from=build /build/publish_product .
 
 EXPOSE 8080
 

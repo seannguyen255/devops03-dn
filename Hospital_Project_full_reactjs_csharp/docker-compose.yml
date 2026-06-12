@@ -1,0 +1,20 @@
+version: "3"
+services:
+  cons-front-end:
+    container_name: cons-front-end
+    ports:
+      - 3001:80
+    build: ./frontend
+  
+  cons-back-end:
+    container_name: cons-back-end
+    ports:
+      - 8080:8080
+    build: ./hopital_BE/Hospital_API
+    networks:
+      - my_network
+
+
+networks:
+  my_network:
+    external: true
