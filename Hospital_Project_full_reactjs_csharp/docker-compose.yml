@@ -4,7 +4,7 @@ services:
     container_name: cons-front-end
     ports:
       - 3001:80
-    build: ./frontend
+    build: ./hospital_FE
   
   cons-back-end:
     container_name: cons-back-end
